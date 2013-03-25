@@ -1,0 +1,6 @@
+{>"livedesk>items/sources/base"/}
+{<ProviderClass}google {+ProviderSubClass}{/ProviderSubClass}{/ProviderClass}
+{<TopAnnotation}{/TopAnnotation}
+{<EditableClass}{/EditableClass}
+{<EditableAttribute}{/EditableAttribute}
+{<ContainerIframe}{/ContainerIframe}
