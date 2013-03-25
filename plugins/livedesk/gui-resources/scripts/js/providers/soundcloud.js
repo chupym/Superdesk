@@ -21,8 +21,8 @@ define('providers/soundcloud', [
             client_id : 'd913360f3cad924d67e1ad1887c00855',
             init : function() {
                 if(!this.initialized || !this.el.children(":first").length) {
-                    this.render();
-                    this.adaptor.init();
+                    this.adaptor._parent = this;
+					this.adaptor.init();
                 }
                 this.initialized = true;
             }, 
@@ -61,13 +61,10 @@ define('providers/soundcloud', [
                 }).done(function(data){
                     self.stopLoading('#soundcloud-sound-more');
                     if (data.length > 0) {
-                        console.log(data);
                         //prepare the data for dragging to timeline
                         for( var created, posts = [], i = 0, count = data.length; i < count; i++ ){
                             var item = data[i];
-                            item.description_trimed = self.crudeTrim(item.description);   
                             created = new Date(item.created_at);
-                            item.created_at_formated = created.format(_('ddd mmm dd yyyy HH:MM:ss'));
                             item.created_at_iso = created.toISOString();
                             item.iframe = 'http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F'+item.id+'&show_artwork=true';
                             self.data[item.id] = item;

@@ -2,7 +2,13 @@
 {<ProviderClass}soundcloud{/ProviderClass}
 {<ContainerTitleLink}{Meta.permalink_url}{/ContainerTitleLink}
 {<ContainerTitleName}{Meta.title|s}{/ContainerTitleName}
-{<ContainerDescriptionText}{Meta.description_trimed|s}{/ContainerDescriptionText}
+{<ContainerDescriptionText}
+	{?Meta.description}
+		{Meta.description|trim150|s}
+	{:else}
+		&nbsp;
+	{/Meta.description}
+{/ContainerDescriptionText}
 {<TimeIso}{Meta.created_at_iso}{/TimeIso}
 {<TimeShowed}{Meta.created_at_formated}{/TimeShowed}
 {<ContainerIframeUrl}{Meta.iframe}{/ContainerIframeUrl}

@@ -21,7 +21,7 @@ define('providers/instagram', [
             url : 'https://api.instagram.com/v1/tags/%(apykey)s/media/recent?client_id=2bba61e66c8c4773b32c765955bd2b8d', 
             init : function() {
                 if(!this.initialized || !this.el.children(":first").length) {
-                    this.render();
+                    this.adaptor._parent = this;
                     this.adaptor.init();
                 }
                 this.data = {};

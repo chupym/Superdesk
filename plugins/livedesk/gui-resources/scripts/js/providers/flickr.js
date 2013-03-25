@@ -40,7 +40,7 @@ $.extend(providers.flickr, {
 			this.imageUrls.full = str.format(this.imageUrl,{size:''});
 			this.imageUrls.thumbnail = str.format(this.imageUrl,{size:'_s'});
 			if(!this.initialized || !this.el.children(":first").length) {
-				this.render();
+				this.adaptor._parent = this;
 				this.adaptor.init();	
 			}
 			this.initialized = true;

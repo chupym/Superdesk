@@ -10,11 +10,15 @@ define([
             init: function() {
                 var self = this;
                 new $.rest('Data/Collaborator/')
-                    .xfilter('Id')
+                    .xfilter('Id, Source.Key')
                     .request({data: { 'qs.name': 'instagram'}})
                     .done(function(collabs) {
-                        if($.isDefined(collabs[0])) 
+                        if($.isDefined(collabs[0])){
                             self.author = collabs[0].Id;
+                            self.key = collabs[0].Source.Key;
+                        }
+                        self._parent.client_id = self.key;
+                        self._parent.render();
                     });
             },
             universal: function(obj) {
@@ -25,7 +29,7 @@ define([
                     sourceTemplate: 'sources/instagram',
                     data: {
                         Creator: localStorage.getItem('superdesk.login.id'),
-                        Content: '',
+                        Content: obj.images.standard_resolution.url,
                         Type: 'normal',
                         Author: this.author,
                         Meta: meta
