@@ -1,4 +1,5 @@
 {>"livedesk>items/sources/base"/}
+{<Container}{/Container}
 {<ProviderClass}flickr{/ProviderClass}
 {<TopAnnotation}{/TopAnnotation}
 {<ContentImageAlt}{Meta.title}{/ContentImageAlt}

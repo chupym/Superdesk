@@ -1,4 +1,5 @@
 {>"livedesk>items/sources/base"/}
+{<Container}{/Container}
 {<ProviderClass}instagram{/ProviderClass}
 {<SourceLink}http://instagram.com{/SourceLink}
 {<AuthorShowed}instagram{/AuthorShowed}

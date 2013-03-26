@@ -1,4 +1,5 @@
 {>"livedesk>items/sources/base"/}
+{<Container}{/Container}
 {<ProviderClass}soundcloud{/ProviderClass}
 {<ContainerTitleLink}{Meta.permalink_url}{/ContainerTitleLink}
 {<ContainerTitleName}{Meta.title|s}{/ContainerTitleName}

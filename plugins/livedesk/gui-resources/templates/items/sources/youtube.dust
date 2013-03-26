@@ -1,4 +1,5 @@
 {>"livedesk>items/sources/base"/}
+{<Container}{/Container}
 {<ProviderClass}youtube{/ProviderClass}
 {<ContainerTitleLink}//youtube.com/watch?v={Meta.id}"{/ContainerTitleLink}
 {<ContainerTitleName}{Meta.title|s}{/ContainerTitleName}

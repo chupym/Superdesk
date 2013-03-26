@@ -1,5 +1,4 @@
 {>"livedesk>items/{Base}"/}
-{<Container}{/Container}
 {<EditableClass}{/EditableClass}
 {<EditableAttribute}{/EditableAttribute}
 {<WrapupAdditionalActions}{/WrapupAdditionalActions}
