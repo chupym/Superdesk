@@ -12,6 +12,7 @@ define([
 	'tmpl!theme/item/posttype/wrapup',
 	'tmpl!theme/item/posttype/quote',
 	'tmpl!theme/item/posttype/link',
+	'tmpl!theme/item/posttype/advertisement',	
 	'tmpl!theme/item/source/advertisement',	
 	'tmpl!theme/item/source/google',
 	'tmpl!theme/item/source/twitter',
@@ -92,7 +93,7 @@ define([
 				self._parent.reorderOne(self);
 			}
 			data.HashIdentifier = self._parent.hashIdentifier;
-			if(data.Meta) {
+			if(data.Meta && data.Meta.annotation) {
 				data.Meta = JSON.parse(data.Meta);
 				if(data.Meta.annotation[1] === null) {
 					data.Meta.annotation = data.Meta.annotation[0];
@@ -100,7 +101,6 @@ define([
 				}
 				if ( typeof data.Meta.annotation !== 'string') {
 					if(data.Meta.annotation[0]) {
-						console.log('annotation[0]');
 						var aux = data.Meta.annotation;
 						data.Meta.annotation = {
 							'before': $.trimTag(['<br>', '<br />'], aux[0]), 
@@ -116,7 +116,6 @@ define([
 					data.Meta.annotation = $.trimTag(['<br>', '<br />'], data.Meta.annotation);
 				}
 			}
-			console.log(data.Meta);
 			newHash = self._parent.hashIdentifier + data.Order;
 			if(self._parent.location.indexOf('?') === -1) {
 				data.permalink = self._parent.location + '?' + newHash ;
